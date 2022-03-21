@@ -1,0 +1,21 @@
+npm i typescript -D para desenvolvimento.
+npx tsc --init = iniciar typescript na aplicação
+npm i ts-node-dev -D = vai ler nossa aplicacão rodando em typescript
+Adicionado no package.json : "tsc-node-dev index.ts" para se executado em desenvolvimento
+ctrl+shift+p = para limpar cash do terminal
+strict = vai controlar a typagem
+npm i express, por estar trabalhando com typescript ser[a necessário instaçação do tipo de express também npm i @types/express -D]
+API REST - fazer todas opercões apartir do banco de dados, com rotas.
+
+Verbos https: GET - irá ler 
+PUT/PATCH: atualizar recursos
+UPDATE: atualizar algum recurso
+DELETE: deletar algum recurso
+
+//Criar um usuario C
+//Editar um usuario R
+ //Selecionar um usuario U
+//Deletar um usuario D
+Extensão Thunder client para ver o consumo de API
+Como a aplicação não consegue ler o json passar outra alternativa
+server.user(express.json())
