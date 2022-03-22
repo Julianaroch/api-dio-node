@@ -1,16 +1,21 @@
-import { Request, Response } from 'express';
+ import { Request, Response } from 'express';
+import { CreateUserService } from '../services/CreateUserService';
+
 class CreateUserController{
     handle(request: Request, response: Response){
 
+        const createUserService = new CreateUserService();
         const nome = request.body.nome;
+        const email = request.body.email;
 
-        if(nome.length === 0){
-            return response.status(400).json({mensagem: 'Infrome o nome de um usuário'})
+        if(nome.length === 0 || email.lenght ===0){         //validação para não passar nenhum campo vazio
+            return response.status(400).json({mensagem: 'Preencha todos os campos!'})
         }
 
-        return response.status(200).json({mensagem: `Usuario ${nome} criado com sucesso`}) 
+        const user = createUserService.execute({nome, email})
+
+        return response.status(200).json({user}) 
     }
-    
 }
 
 export { CreateUserController }
